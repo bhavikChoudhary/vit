@@ -1,0 +1,25 @@
+<div class="page-area text-center bg-light">
+    <h1 class="mt-5 mb-4 font-weight-bold">Home</h1>
+    <div class="card" #box>
+        <div class="card-body text-center">
+            <h2>User Name is: <span class="text-white">{{userName}}</span></h2>
+        </div>
+    </div>
+    <div class="row mt-4">
+        <div class="col-lg-6">
+            <button (click)="changeChildProperty()">Change Child Property</button>&nbsp;
+            <button (click)="callChildMethod()">Call Child Method</button>
+        </div>
+        <div class="col-lg-6">
+          <app-comp00>
+              <p #childContent >This is ng content paragraph</p>
+          </app-comp00>
+        </div>
+        <div class="col-lg-6">
+          
+        </div>
+        <div class="col-lg-6">
+          
+        </div>
+    </div>
+</div>

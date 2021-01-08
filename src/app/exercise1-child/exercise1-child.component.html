@@ -1,0 +1,21 @@
+<div class="row">
+    <div class="col-lg-4 float-left border border-warning rounded p-4 bg-light">
+        <input type="text" class="form-control" id="exampleInputUser" placeholder="Create User" #userName>
+        <div class="text-center mt-3 mb-5">
+            <button class="btn btn-warning btn-lg" (click)="onCreateUser(userName.value)">Create User</button>
+        </div>
+        <ng-container *ngIf="showTotalUsers">
+            Total Users: <span class="text-warning">{{totalUsers}}</span>
+        </ng-container>
+    </div>
+    <div class="col-lg-4"></div>
+    <div class="col-lg-4 float-right border border-success rounded p-4 bg-light">
+        <input type="text" class="form-control" id="exampleInputAdmin" placeholder="Create Admin" #adminName>
+        <div class="text-center mt-3 mb-5">
+            <button class="btn btn-success btn-lg" (click)="onCreateAdmin(adminName.value)">Create Admin</button>
+        </div>
+        <ng-container *ngIf="showTotalAdmins">
+            Total Users: <span class="text-success">{{totalAdmins}}</span>
+        </ng-container>
+    </div>
+</div>

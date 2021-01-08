@@ -1,0 +1,54 @@
+<div class="page-area text-center bg-light p-5">
+    <h2>Contact Us</h2>
+    <p class="float-left">Lorem ipsum dolor sit amet consectetur adipisicing elit. A laudantium vero obcaecati voluptates vel odit tenetur libero quisquam fuga quia iusto, quis quod aspernatur! Et optio blanditiis ratione beatae neque!</p>
+    <div class="row justify-content-center">
+        <div class="col-md-6 text-left bg-white rounded shadow py-3">
+            <!-- <app-card1></app-card1> -->
+            <form (ngSubmit)="onSubmit(userForm)" #userForm="ngForm">
+                <div ngModelGroup="userDetail" #userDetail="ngModelGroup">
+                    <div class="form-group">
+                        <label for="username">Username*</label>
+                        <input type="text" class="form-control" id="username"
+                         placeholder="Enter Username.." name="username" [(ngModel)]="username" required 
+                        >
+                        <small *ngIf="username">Your username is <span class="text-success">{{username}}</span></small>
+                        <button class="btn-primary bt-sm mt-2" (click)="setUsername()">Set Username</button>
+                      </div>
+                      <div class="form-group">
+                        <label for="email">Email*</label>
+                        <input type="email" class="form-control" id="email"
+                         placeholder="Enter Email.." name="email" ngModel required email #email="ngModel">
+                        <small class="text-danger"
+                          *ngIf="!email.valid && email.touched"
+                        >Please enter valid email.</small>
+                      </div>
+                      <div class="form-group">
+                        <label for="course">Select Course</label>
+                        <select class="form-control" id="course" name="course" [ngModel]="defaultCourse" required >
+                            <option value="Angular">Angular</option>
+                            <option value="HTML">HTML</option>
+                            <option value="Javascript">Javascript</option>
+                        </select>
+                      </div>
+                      <div class="form-group">
+                          <div class="cutom-control custom-radio" class="ml-4"
+                            *ngFor="let gender of genders">
+                              <input type="radio"
+                                id="{{gender.id}}"
+                                name="gender"
+                                class="custom-control-input"
+                                [ngModel]="defaultGender"
+                                value="{{gender.gender}}"
+                              >
+                              <label class="custom-control-label" for="{{gender.id}}">{{gender.gender}}</label>
+                          </div>
+                      </div>
+                      <button 
+                          type="submit" 
+                          class="btn btn-success"
+                          [disabled]="userForm.status === 'INVALID'"
+                      >Submit</button>
+                </div>
+              </form>
+        </div>
+</div>

@@ -1,0 +1,26 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table"> 
+                <thead>
+                    <tr>
+                        <th>Sr No.</th>
+                        <th>Product Image</th>
+                        <th>Product Name</th>
+                        <th>Product Id</th>
+                        <th>Product Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let product of products; index as i">
+                        <td># {{i+1}}</td>
+                        <td><img src="{{product.proImg}}" alt="" width="70"></td>
+                        <td>{{product.name}}</td>
+                        <td>{{product.id}}</td>
+                        <td>{{product.price}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

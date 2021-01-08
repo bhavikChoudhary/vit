@@ -1,0 +1,12 @@
+.container{
+    min-width: 80%;
+    padding: 0;
+}
+
+.nav-item{
+    padding: 1rem;
+}
+
+.active{
+    text-decoration-color: royalblue;
+}

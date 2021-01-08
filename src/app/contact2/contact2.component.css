@@ -1,0 +1,41 @@
+input.ng-invalid.ng-touched,
+select.ng-invalid.ng-touched{
+    border: 1px solid red;
+    box-shadow: 0 0 11px inset #ff000014;
+}
+
+.btn-add{
+    font-size: 13px;
+    font-weight: 700;
+    color: rgba(0,0,0,0.4);
+}
+
+.btn-add i{
+    font-size: 33px;
+    line-height: 12px;
+    display: inline-block;
+    position: relative;
+    top: 6px;
+    margin-right: 3px;
+}
+
+.btn-add:hover{
+    border: 1px solid blue;
+    background: #fff;
+    color: blue;
+}
+
+.myRecForm.INVALID{
+    border: 2px solid red;
+    box-shadow: 0 0 31px red;
+}
+
+.myRecForm.PENDING{
+    border: 3px solid rgb(202, 247, 3);
+    box-shadow: 0 0 31px rgb(203, 245, 18);;
+}
+
+.myRecForm.VALID{
+    border: 2px solid rgb(15, 228, 51);
+    box-shadow: 0 0 31px rgb(15, 228, 51);
+}

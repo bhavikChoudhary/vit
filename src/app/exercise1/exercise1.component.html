@@ -1,0 +1,51 @@
+
+
+<div class="container">
+    <div class="jumbotron row">
+        <h1 class="col-lg-12 text-center mb-5"><strong class="text-success">EXERCISE 1</strong><br>(ngIf, ngFor, input, output, push, splice)</h1>
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-body">
+                  <h3 class="card-title text-success">USER</h3>
+                  <table class="table">
+                    <thead class="thead-light">
+                      <tr>
+                        <th>User Name</th>
+                        <th class="text-danger">Remove</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor = "let user of users, index as i">
+                        <td>{{user}}</td>
+                        <th class="text-danger"><a class="" (click)="onRemoveUser(i)">Remove</a></th>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-body">
+                  <h3 class="card-title text-success">ADMIN</h3>
+                  <table class="table">
+                    <thead class="thead-light">
+                      <tr>
+                        <th>Admin Name</th>
+                        <th class="text-danger">Remove</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor = "let admin of admins, index as k">
+                        <td>{{admin}}</td>
+                        <th class="text-danger"><a class="" (click)="onRemoveAdmin(k)">Remove</a></th>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+        </div>
+        <hr class="col-lg-12 mb-5 mt-5 seperator-line">
+        <app-exercise1-child class="w-100" (usersArray)="onAddUsers($event)" (adminsArray)="onAddAdmins($event)" [showTotalUsers]="showTotalUsers" [showTotalAdmins]="showTotalAdmins" [totalUsers]="totalUsers" [totalAdmins]="totalAdmins"></app-exercise1-child>
+    </div>
+</div>
